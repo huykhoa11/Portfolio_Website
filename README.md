@@ -1,7 +1,7 @@
 # Portfolio_Website
 My portfolio buillt in HTML, CSS and Jquery.
 
-# Demo of website:
+# Demo of website
 https://youtu.be/J73myzfJVtk
 
 # Preview 
