@@ -2,6 +2,7 @@
 
 * {
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 
 body {
@@ -296,6 +297,7 @@ body {
 .about .about-text {
     position: relative;
     align-self: flex-start;
+    line-height: 25px;
     max-width: 40vw;
     max-height: 20vh;
     padding: 12px 12px;
@@ -360,31 +362,58 @@ body {
     min-height: 23vh;
 }
 
-.offer .item-1 {
-	grid-column: 1/2;
-	grid-row: 1/4;
-}
+.offer > * {
+    border-top: solid 3px crimson;
+    border-left: solid 3px crimson;
+    border-radius: 10px;
 
-.offer .item-2 {
-	grid-column: 2/3;
-	grid-row: 1/4;
-}
-
-.offer .item-3 {
-	grid-column: 3/4;
-	grid-row: 1/4; 
-}
-
-
-.item-1, .item-2, .item-3 {
-	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .5);
-    background: linear-gradient(to top right, #fff 0%, #aaa 100%);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, .5);
+    background: linear-gradient(to top right, #fff 0%, #cfcdcd 100%);
     display: flex;
     flex-direction: column;
     justify-content: end;
     padding: 0 1rem;
     color: #444;
     transition: 1s ease;
+}
+
+.offer > *::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: .4;
+    z-index: -10;
+}
+
+.offer .item-1 {
+	grid-column: 1/2;
+	grid-row: 1/4;
+    background-image: url("/images/project_instagram.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.offer .item-2 {
+	grid-column: 2/3;
+	grid-row: 1/4;
+    background-image: url("/images/project_HRT.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.offer .item-3 {
+	grid-column: 3/4;
+	grid-row: 1/4;
+    background-image: url("/images/project_agddoc.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 }
 
 .item-1:hover, .item-2:hover, .item-3:hover {
@@ -712,7 +741,7 @@ body {
 /* Start of Copyright Section */
 
 #copyright{
-	background-image: linear-gradient(to right, red 0%, #ddd 100%);
+	background-image: linear-gradient(to right, crimson 25%, #ddd 100%);
     margin-top: 8rem;
 }
 
