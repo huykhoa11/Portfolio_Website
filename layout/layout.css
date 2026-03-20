@@ -1269,6 +1269,8 @@ body {
 
     #copyright{
         margin-top: 7rem;
+        position: relative;
+        top: 250px;
     }
     
     #copyright .copyright{
