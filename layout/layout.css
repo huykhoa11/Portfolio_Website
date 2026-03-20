@@ -1136,11 +1136,13 @@ body {
         clip-path: circle(55vw at right bottom);
     }
 
+
     .thumb-1, .thumb-2, .thumb-3 {
         width: 20%;
         height: 20%;
         padding: 0 0.6rem;
         transition: transform 0.4s;
+        /* transition: none */
     }
 
     .about {
@@ -1222,6 +1224,8 @@ body {
     }
 
     #journey {
+        position: relative;
+        top: 300px;
         margin-top: 43vh;
     }
 
@@ -1251,7 +1255,16 @@ body {
     .intro-1 p, .intro-2 p, .intro-3 p, .intro-4 p, .intro-5 p{
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-size: 12px;
-    } 
+    }
+
+    .icon > ul li:nth-child(n) {
+        background: none;
+    }   
+
+    #gallery{
+        position: relative;
+        top: 300px;
+    }
 
 
     #copyright{
