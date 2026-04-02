@@ -24,6 +24,16 @@
         word-break: break-word;
     }
 
+    ::-webkit-scrollbar
+    {
+        display: none;
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+        display: none;
+    }
+
     #main {
         display: flex;
         flex-direction: column;
