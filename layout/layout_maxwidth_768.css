@@ -1,0 +1,140 @@
+/* Landscape phones and portrait tablets */ 
+@media (max-width: 767px) { 
+    #main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #main .text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #main .text h1 {
+        font-size: 40px;
+    }
+    
+    #main .text span  {
+        font-size: 15px;
+        font-weight: bold;
+        color: crimson;
+    }
+    
+    #main .big-img {
+        max-width: 32vw;
+        max-height: 32vh;
+        border-radius: 20%;
+        border-bottom: solid 5px white;
+        position: relative;
+        left: 30vw;
+        margin: 0;
+    }
+    
+    
+    #main .btn {
+        position: absolute;
+        background-color: crimson;
+        border-radius: 40px;
+        padding: 8px 8px;
+        font-weight: bold;
+        letter-spacing: 0.6px;
+        font-size: small;
+        text-decoration: none;
+        color: white;
+        transition: 0.25s;
+    }
+    
+    #main .btn:hover {
+        background-color: white;
+        color: crimson;
+        border: solid 1px crimson;
+    }
+
+    .menu-btn {
+        display: block;
+        justify-content: end;
+        
+        position: fixed;
+        z-index: 4; /* .bar z-index: 3; */
+        top: 0.6rem;
+        right: 3.5rem;
+    }
+
+    .circle {
+        clip-path: circle(55vw at right bottom);
+    }
+
+    .thumb-img {
+        display: none;
+    }
+
+    /* .thumb-1, .thumb-2, .thumb-3 {
+        width: 10%;
+        height: 10%;
+        padding: 0 0.6rem;
+        transition: transform 0.4s;
+        transform: translate(-60%, -130%);
+    } */
+
+    .about .avatar {
+        display: none;
+    }
+
+    .about .about-text {
+        max-width: 80%;
+    }
+
+    .about .about-btn {
+        padding: 3px 6px;
+        letter-spacing: 0;
+        font-size: 0.6rem;
+        position: static;
+        width: fit-content;
+        display: block;
+        margin: auto;
+    }
+
+    #project {
+        margin-top: 160px;
+    }
+
+    .offer {
+        padding: 0 3rem;
+    }
+
+    .offer .item-1 {
+        grid-column: 1/4;
+        grid-row: 1/2;
+    }
+    
+    .offer .item-2 {
+        grid-column: 1/4;
+        grid-row: 2/3;
+    }
+    
+    .offer .item-3 {
+        grid-column: 1/4;
+        grid-row: 3/4; 
+    }
+
+    .icon > ul li {
+        text-decoration: none;
+        list-style-type: none;
+        width: 3.8rem;
+	    height: 3.8rem;
+    }
+
+    .intro-1 h1, .intro-2 h1, .intro-3 h1, .intro-4 h1, .intro-5 h1{
+        border-bottom: solid 1px black ;
+        font-weight: bolder;
+        font-size: 14px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    .intro-1 p, .intro-2 p, .intro-3 p, .intro-4 p, .intro-5 p{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 12px;
+    }
+}

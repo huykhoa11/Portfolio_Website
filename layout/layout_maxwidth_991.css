@@ -1,0 +1,95 @@
+/* Portrait tablets and small desktops */ 
+@media screen and (min-width: 768px) and (max-width: 991px) { 
+    #main .big-img {
+        width: 50vw;
+        height: 50vh;
+        /* margin:0 7vw; */
+        border-radius: 20%;
+        border-bottom: solid 5px white;
+    }
+
+    .circle {
+        clip-path: circle(55vw at right bottom);
+    }
+
+    .thumb-1, .thumb-2, .thumb-3 {
+        width: 10%;
+        height: 10%;
+        padding: 0 0.6rem;
+        transition: transform 0.4s;
+    }
+
+    .menu-btn {
+        display: block;
+        justify-content: end;
+        
+        position: fixed;
+        z-index: 4; /* .bar z-index: 3; */
+        top: 0.6rem;
+        right: 3.5rem;
+    }
+
+    #copyright{
+        margin-top: 7rem;
+    }
+    
+    #copyright .copyright{
+        min-height: 200px;
+        flex-direction: column;
+        padding-top: 25px;
+        padding-bottom: 8px;
+    }
+    
+    #copyright .copyright-top {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+    #copyright h2 {
+        font-weight: 500;
+        font-size: 2.2rem;
+        letter-spacing: 0.1rem;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-shadow:
+        -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+    }
+    
+    #copyright h4 {
+        font-weight: 500;
+        font-size: 1.3rem;
+        letter-spacing: 0.1rem;
+    }
+    
+    #copyright .copyright-bottom {
+        display: flex;
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+    
+    #copyright .item {
+        height: 50px;
+        width: 50px;
+        filter: grayscale(100%);
+    }
+    
+    #copyright .item:hover {
+        transform: scale(1.3);
+        filter: grayscale(0%);
+        transition: .3s ease;
+    }
+    
+    #copyright p {
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: center;
+        color: #ddd;
+        text-align: center;
+    }    
+} 

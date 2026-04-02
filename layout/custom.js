@@ -18,87 +18,58 @@ $(document).ready(function(){
 
     $(window).scroll(function(){
 		var scroll = $(window).scrollTop();
-		if (scroll > 350) { 		/* && ($(window).width() >= 1201)) */
+		if (scroll > 350) {
 		  $(".nav").css("background" , "black");
 		}
-  
-/* 		else{
-			$(".navbar").css("background" , "transparent");  	
-		} */
 	});
 
 
-	/* var count = 0;
-    $(window).on("resize", function(){
-        var $nav = $("ul");
-        var listFloat = $(".menu-btn").css("display");
-        if(listFloat == "none"){
-            $nav.css("display", "flex");
-            $(".list-btn").attr("src", "images/delete.png");
-        }
-        else {
-            $nav.css("display", "none");
-            $(".list-btn").attr("src", "https://img.icons8.com/ios/50/000000/menu--v3.png");
-            count = 0;
-        }
-    });
-
-	$(".list-btn").click(function(){
-        // Change src attribute of image
-        count += 1;
-        var $nav = $("ul");
-        var listFloat = $(".menu-btn").css("display");
-        $(".list").css("width", "100%");
-        if(count % 2 == 1){
-            $(".list-btn").attr("src", "images/delete.png");
-            console.log("hello");
-            $("ul").css("display", "flex");           
-        }
-        else {
-            $(".list-btn").attr("src", "https://img.icons8.com/ios/50/000000/menu--v3.png");
-
-        }
-    });  */
 	$(window).scroll(function(){
 		var scroll = $(window).scrollTop();
 		if (scroll > 100) { 
-		  $(".bar").css("box-shadow" , "0 4px 2px -2px gray");
-		  $(".bar").css("transition" , "0.25s");
+		//   $(".bar").css("box-shadow" , "0 4px 2px -2px gray");
+		//   $(".bar").css("transition" , "0.25s");
 		}
   
 		else{
-			$(".bar").css("box-shadow" , "none");
-			$(".bar").css("transition" , "0s");	
+			// $(".bar").css("box-shadow" , "none");
+			// $(".bar").css("transition" , "0s");	
 		}
 	}); 
 
 
-	if($(window).width() > 991) {
-		$(".sidenav").css("width", "0%");
-		$(".menu-btn").css("display", "none");
-		$(".closebtn").css("display", "none");
-		$(".list").css("display", "flex");
-	}
-	if($(window).width() <= 1050) {
-		$(".sidenav").css("width", "0%");
-		$(".menu-btn").css("display", "block");
-		$(".closebtn").css("display", "none");
-		$(".list").css("display", "none");
-	}
+    // Mobile browsers may trigger `resize` while scrolling (address bar UI changes),
+    // which can cause the menu button to visually "jump".
+    // Debounce + only update when the breakpoint mode changes.
+    function applyNavMode() {
+        var w = $(window).width();
+        var isMobile = w <= 1050;
+
+        $(".sidenav").css("width", "0%");
+        $(".closebtn").css("display", "none");
+
+        if (isMobile) {
+            $(".menu-btn").css("display", "block");
+            $(".list").css("display", "none");
+        } else {
+            $(".menu-btn").css("display", "none");
+            $(".list").css("display", "flex");
+        }
+
+        return isMobile;
+    }
+
+    var lastMobileMode = applyNavMode();
+    var resizeTimer;
 
 	$(window).on("resize", function(){
-        if($(window).width() > 991) {
-			$(".sidenav").css("width", "0%");
-			$(".menu-btn").css("display", "none");
-			$(".closebtn").css("display", "none");
-			$(".list").css("display", "flex");
-		}
-		if($(window).width() <= 1050) {
-			$(".sidenav").css("width", "0%");
-			$(".menu-btn").css("display", "block");
-			$(".closebtn").css("display", "none");
-			$(".list").css("display", "none");
-		}
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function(){
+            var nextMobileMode = $(window).width() <= 1050;
+            if (nextMobileMode !== lastMobileMode) {
+                lastMobileMode = applyNavMode();
+            }
+        }, 120);
     });
 
 	$ (".list-btn").click(function(){
@@ -112,9 +83,29 @@ $(document).ready(function(){
 	 $(".closebtn").click(function(){
         // Change src attribute of image
         $(".sidenav").css("width", "0%");
-		$(".menu-btn").css("display", "block");
 		$(".closebtn").css("display", "none");
+		$(".menu-btn").css("display", "block");
 	}); 
+
+
+
+	// Khi nhấn nút mở Menu
+	$(".list-btn").click(function(){
+		$(".sidenav").css("width", "100%");
+		$(".closebtn").css("display", "block");
+		$(".menu-btn").css("display", "none");
+		
+		$("body").addClass("stop-scrolling");
+	});
+
+	// Khi nhấn nút đóng Menu
+	$(".closebtn").click(function(){
+		$(".sidenav").css("width", "0%");
+		$(".closebtn").css("display", "none");
+		$(".menu-btn").css("display", "block");
+		
+		$("body").removeClass("stop-scrolling");
+	});
 
     
 });
