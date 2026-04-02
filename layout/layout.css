@@ -389,7 +389,7 @@ body {
 .offer .item-1 {
 	grid-column: 1/2;
 	grid-row: 1/4;
-    background-image: url("../images/project_instagram.PNG");
+    background-image: url("../images/employeeEvalProj.png");
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
